@@ -4,13 +4,26 @@
 @tailwind utilities;
 
 * {
+  animation-duration: 1000ms;
+  scroll-behavior: smooth;
   box-sizing: border-box;
-  font-family: Poppins;
   margin: 0;
+  --charcoal: #3a6b7e;
+  --persian-green: #2a9d8fff;
+  --saffron: #e9c46aff;
+  --sandy-brown: #f4a261ff;
+}
+body {
+  background: #fbfefb;
+  font-family: Poppins;
+  color: #222222; /* dark gray */
+  /* #F5F5F5 (Light Gray) */
 }
 .wrapper {
   max-width: 1440px;
   margin: 0 auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .test {
@@ -19,10 +32,25 @@
 .test2 {
   border: blue 1px solid;
 }
-/* 
-.color{
-  #333333
-  #F5CC5D
-  #50A19D
-  #D11C2D
-} */
+
+/* scroll effect */
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
