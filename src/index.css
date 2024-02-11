@@ -12,3 +12,17 @@
   max-width: 1440px;
   margin: 0 auto;
 }
+
+.test {
+  border: red 1px solid;
+}
+.test2 {
+  border: blue 1px solid;
+}
+/* 
+.color{
+  #333333
+  #F5CC5D
+  #50A19D
+  #D11C2D
+} */
