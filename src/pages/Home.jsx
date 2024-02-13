@@ -85,9 +85,8 @@ export default function home() {
                       alt={product.name}
                       className="w-full h-auto object-cover mb-4"
                     />
-                    <h3 className="text-lg font-semibold mb-2">
-                      {product.name}
-                    </h3>
+                    <p className="text-lg font-semibold mb-2">{product.name}</p>
+                    <p className="">{product.description}</p>
                     <p className="text-gray-600">&#x20B1; {product.price}</p>
                     <p>★★★★☆ </p>
                     <div className=" flex w-full px-2 text-xl">
@@ -103,6 +102,10 @@ export default function home() {
               ))}
             </div>
           </div>
+          {/* its responsive, 
+          todo: 
+            make navigation responsive. 
+            fix description mote in in img maybe when you hover there is a view detail and have modal for details and descriptions */}
         </div>
       </div>
     </div>
