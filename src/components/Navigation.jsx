@@ -5,7 +5,7 @@ import { IoPerson } from "react-icons/io5";
 
 export default function Navigation() {
   return (
-    <div className=" bg-saffron">
+    <div className="navigation">
       <div className="wrapper">
         <div className=" flex justify-between items-center">
           <div className=" text-2xl">
