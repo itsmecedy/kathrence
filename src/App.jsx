@@ -1,10 +1,10 @@
 import Navigation from "./components/Navigation";
 import { Routes, Route } from "react-router-dom";
 import About from "./pages/About";
-import Services from "./pages/Services";
 import Contact from "./pages/Contact";
 import Home from "./pages/Home";
 import FilterComponent from "./components/FilterComponent";
+import Blogs from "./pages/Blogs";
 
 function App() {
   return (
@@ -13,7 +13,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
-        <Route path="/services" element={<Services />} />
+        <Route path="/blogs" element={<Blogs />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
       {/* <FilterComponent /> */}
