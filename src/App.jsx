@@ -5,6 +5,7 @@ import Contact from "./pages/Contact";
 import Home from "./pages/Home";
 import FilterComponent from "./components/FilterComponent";
 import Blogs from "./pages/Blogs";
+import AllProducts from "./pages/AllProducts";
 
 function App() {
   return (
@@ -12,9 +13,10 @@ function App() {
       <Navigation />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
         <Route path="/blogs" element={<Blogs />} />
+        <Route path="/allProducts" element={<AllProducts />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/about" element={<About />} />
       </Routes>
       {/* <FilterComponent /> */}
     </div>
