@@ -12,12 +12,14 @@
   --persian-green: #2a9d8fff;
   --saffron: #e9c46aff;
   --sandy-brown: #f4a261ff;
+  
 }
 body {
   background: #fbfefb;
   font-family: Poppins;
   color: #222222; /* dark gray */
   /* #F5F5F5 (Light Gray) */
+  overflow-y: scroll; /* Always show vertical scrollbar */
 }
 .wrapper {
   max-width: 1440px;
