@@ -60,7 +60,7 @@ export default function Products() {
         <input
           type="text"
           placeholder="Search..."
-          className=" outline-none capitalize px-2 py-1 rounded-lg"
+          className=" outline-none capitalize px-2 py-1 rounded"
         />
       </div>
       {/* filter end */}
