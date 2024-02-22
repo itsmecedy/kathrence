@@ -41,28 +41,28 @@ export default function Navigation() {
           <div className=" text-2xl">
             <Link to="/">KathRence</Link>
           </div>
-          <div>
-            {isMobileView ? (
-              // Mobile view toggle button
-              <div className="lg:hidden text-2xl flex items-center justify-end">
-                <button onClick={toggleMenu} type="button" className="">
-                  <AiOutlineMenu />
-                </button>
-              </div>
-            ) : (
-              // Desktop view navigation
-              <ul className="hidden lg:flex md:flex-row gap-6">
-                {navItems.map((item, index) => (
-                  <li
-                    key={index}
-                    className="text-xl py-5 hover:underline hover:scale-105"
-                  >
-                    <Link to={item.path}>{item.label}</Link>
-                  </li>
-                ))}
-              </ul>
-            )}
-          </div>
+
+          {isMobileView ? (
+            // Mobile view toggle button
+            <div className="lg:hidden text-2xl flex items-center ml-auto">
+              <button onClick={toggleMenu} type="button" className="">
+                <AiOutlineMenu />
+              </button>
+            </div>
+          ) : (
+            // Desktop view navigation
+            <ul className="hidden lg:flex md:flex-row gap-6">
+              {navItems.map((item, index) => (
+                <li
+                  key={index}
+                  className="text-xl py-5 hover:underline hover:scale-105"
+                >
+                  <Link to={item.path}>{item.label}</Link>
+                </li>
+              ))}
+            </ul>
+          )}
+
           {/* Right side navigation */}
           <div className="gap-3">
             {!isMobileView && (
