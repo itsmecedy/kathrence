@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { FaSearch, FaShoppingCart } from "react-icons/fa";
 import { IoPerson } from "react-icons/io5";
@@ -12,11 +12,27 @@ export default function Navigation() {
     { label: "CONTACT US", path: "/contact" },
     { label: "ABOUT US", path: "/about" },
   ];
+
   const [isOpen, setIsOpen] = useState(false);
+  const [isMobileView, setIsMobileView] = useState(false);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobileView(window.innerWidth <= 768); // Adjust the breakpoint as needed
+    };
+
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   return (
     <div className="navigation">
@@ -25,45 +41,49 @@ export default function Navigation() {
           <div className=" text-2xl">
             <Link to="/">KathRence</Link>
           </div>
-
-          {/* desktop view middle and right side navigation */}
-          <ul className="hidden lg:flex md:flex-row gap-6">
-            {navItems.map((item, index) => (
-              <li
-                key={index}
-                className="text-xl py-5 hover:underline hover:scale-105"
-              >
-                <Link to={item.path}>{item.label}</Link>
-              </li>
-            ))}
-          </ul>
-          {/* end of desktop view navigation */}
-
-          {/* enclosed in a div so when in a mobile nav login and cart will not be in the middle, and will be beside with mobile menu toggle button */}
+          <div>
+            {isMobileView ? (
+              // Mobile view toggle button
+              <div className="lg:hidden text-2xl flex items-center justify-end">
+                <button onClick={toggleMenu} type="button" className="">
+                  <AiOutlineMenu />
+                </button>
+              </div>
+            ) : (
+              // Desktop view navigation
+              <ul className="hidden lg:flex md:flex-row gap-6">
+                {navItems.map((item, index) => (
+                  <li
+                    key={index}
+                    className="text-xl py-5 hover:underline hover:scale-105"
+                  >
+                    <Link to={item.path}>{item.label}</Link>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+          {/* Right side navigation */}
           <div className="gap-3">
-            {/* right nav */}
-            <div className="hidden md:flex gap-3">
-              <Link className="text-2xl flex items-center gap-1">
-                <IoPerson /> LOGIN
-              </Link>
-              <Link className="text-2xl flex items-center">
-                <FaShoppingCart />
-              </Link>
-            </div>
+            {!isMobileView && (
+              // Desktop view login and cart
+              <div className="hidden md:flex gap-3">
+                <Link className="text-2xl flex items-center gap-1">
+                  <IoPerson /> LOGIN
+                </Link>
+                <Link className="text-2xl flex items-center">
+                  <FaShoppingCart />
+                </Link>
+              </div>
+            )}
 
-            {/* Mobile menu toggle button( X =>  ☰ ) */}
-            <div className="lg:hidden text-2xl flex items-center">
-              <button onClick={toggleMenu} type="button" className="">
-                <AiOutlineMenu />
-              </button>
-            </div>
             {/* Mobile Navigation when menu is open */}
-            {isOpen && (
-              <ul className=" absolute flex flex-col items-end test2 z-100 h-full  z-10 bg-[#8FBACC] right-0 top-0">
+            {isOpen && isMobileView && (
+              <ul className="absolute flex flex-col items-end test2 z-100 h-full  z-10 bg-[#8FBACC] right-0 top-0">
                 <button
                   onClick={toggleMenu}
                   type="button"
-                  className=" text-2xl pr-4 py-1"
+                  className="text-2xl pr-4 py-1"
                 >
                   <AiOutlineClose />
                 </button>
@@ -86,9 +106,6 @@ export default function Navigation() {
           </div>
         </div>
       </div>
-      {/* TODO:
-         fix mobile responsive navigation 
-         make an object so moobile and web view nav will not repeat it nav items and design/css */}
     </div>
   );
 }
