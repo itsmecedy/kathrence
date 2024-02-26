@@ -24,16 +24,12 @@ export default function Navigation() {
     const handleResize = () => {
       setIsMobileView(window.innerWidth <= 768); // Adjust the breakpoint as needed
     };
-
     handleResize();
-
     window.addEventListener("resize", handleResize);
-
     return () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
-
   return (
     <div className="navigation">
       <div className="wrapper">
@@ -41,7 +37,6 @@ export default function Navigation() {
           <div className=" text-2xl">
             <Link to="/">KathRence</Link>
           </div>
-
           {isMobileView ? (
             // Mobile view toggle button
             <div className="lg:hidden text-2xl flex items-center ml-auto">
@@ -62,7 +57,6 @@ export default function Navigation() {
               ))}
             </ul>
           )}
-
           {/* Right side navigation */}
           <div className="gap-3">
             {!isMobileView && (

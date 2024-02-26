@@ -25,11 +25,11 @@ export default function home() {
         </Carousel>
       </div>
 
-
       {/* its responsive, 
           todo: 
-            make navigation responsive. 
-            fix description mote in in img maybe when you hover there is a view detail and have modal for details and descriptions */}
+            make navigation responsive. // main nav is responsive only the filter in in mobile view is not responsive
+            fix description, // done
+            img maybe when you hover there is a view detail and have modal for details and descriptions */}
     </div>
   );
 }
