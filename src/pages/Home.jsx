@@ -4,7 +4,7 @@ import banner from "../assets/asd.png";
 
 export default function home() {
   return (
-    <div className="wrapper test h-screen">
+    <div className="wrapper h-screen">
       <div className="h-80">
         <Carousel transition={{ duration: 1 }} autoplay={true}>
           <img

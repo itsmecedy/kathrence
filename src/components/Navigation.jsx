@@ -73,7 +73,7 @@ export default function Navigation() {
 
             {/* Mobile Navigation when menu is open */}
             {isOpen && isMobileView && (
-              <ul className="absolute flex flex-col items-end test2 z-100 h-full  z-10 bg-[#8FBACC] right-0 top-0">
+              <ul className="absolute flex flex-col items-end z-100 h-full  z-10 bg-[#8FBACC] right-0 top-0">
                 <button
                   onClick={toggleMenu}
                   type="button"
