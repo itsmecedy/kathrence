@@ -65,8 +65,8 @@ export default function Products() {
       </div>
       {/* filter end */}
       <div className="wrapper">
-        <div className=" h-screen bg-slate-50 drop-shadow-2xl w-full test2 mt-5">
-          <div className="test flex justify-between items-center">
+        <div className=" h-screen bg-slate-50 drop-shadow-2xl w-full mt-5">
+          <div className="flex justify-between items-center">
             <p>
               <b>100</b> Products
             </p>
@@ -83,11 +83,11 @@ export default function Products() {
             </select>
           </div>
           {/* product section */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-4 test2">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-4">
             {/* product start */}
             {products.map((product) => (
               <div key={product.id} className="flex flex-col">
-                <div className="bg-white rounded-lg shadow-md p-4 flex flex-col justify-center items-center gap-1 test">
+                <div className="bg-white rounded-lg shadow-md p-4 flex flex-col justify-center items-center gap-1">
                   <img
                     src={product.image}
                     alt={product.name}
