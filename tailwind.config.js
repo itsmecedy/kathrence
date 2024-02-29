@@ -11,6 +11,7 @@ export default withMT({
         sandy: "#F4A261", //brown
         powder: "#fbfefb", //white
         tomato: "#FF5F42", //red
+        hoverTomato: "#ff2902", //red
       },
     },
   },
