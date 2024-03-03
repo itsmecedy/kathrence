@@ -115,6 +115,7 @@ export default function Products() {
             ))}
           </div>
           {/* end of product section */}
+          {/* on mobile view make a filter in left for supplies category */}
         </div>
       </div>
     </>
