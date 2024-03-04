@@ -49,7 +49,7 @@ export default function Products() {
   return (
     <>
       {/* products filter navigation */}
-      <div className=" bg-saffron flex justify-center items-center px-5 py-3 gap-10">
+      <div className="hidden  bg-saffron lg:flex justify-center items-center px-5 py-3 gap-10">
         <div className="flex justify-center items-center gap-10">
           <Link to="/">ALL</Link>
           <Link to="/">DOGS</Link>
@@ -66,13 +66,14 @@ export default function Products() {
       {/* filter end */}
       <div className="wrapper">
         <div className=" h-screen bg-slate-50 w-full mt-5">
-          <div className="flex justify-between items-center">
-            <p>
-              <b>100</b> Products
-            </p>
+          <div className="flex justify-between items-center mb-3">
+            <div>
+              <b>100 </b>
+              <span>Products</span>
+            </div>
             <select
               id="countries"
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 h-fit "
+              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 h-fit scale-90"
             >
               <option defaultValue>Recommended</option>
               <option value="newest">Newest</option>
