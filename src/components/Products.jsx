@@ -71,17 +71,7 @@ export default function Products() {
               <b>100 </b>
               <span>Products</span>
             </div>
-            <select
-              id="countries"
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 h-fit scale-90"
-            >
-              <option defaultValue>Recommended</option>
-              <option value="newest">Newest</option>
-              <option value="price-low-high">Price (Low to High)</option>
-              <option value="price-high-low">Price (High to Low)</option>
-              <option value="name-az">Name A-Z</option>
-              <option value="name-za">Name Z-A</option>
-            </select>
+            {/* make a filter button by categories and sort button by name price etc... */}
           </div>
           {/* product section */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-4">
