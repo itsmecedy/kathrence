@@ -37,12 +37,6 @@ export default function Blogs() {
           </div>
         ))}
       </div>
-      {/* TODO:
-                might change it to blogs & || reviews. blogs sounds like focuses on content 
-                make video work in different platforms tiktok facebook yt insta etc.
-                
-
-                */}
     </div>
   );
 }
