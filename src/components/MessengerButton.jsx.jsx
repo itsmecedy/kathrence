@@ -10,7 +10,7 @@ const MessengerButton = () => {
       style={{
         position: "fixed",
         bottom: "20px",
-        right: "20px",
+        left: "20px",
         zIndex: "1000",
         backgroundColor: "#0078FF", // Messenger blue color
         padding: "12px",
