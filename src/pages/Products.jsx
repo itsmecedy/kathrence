@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import toy from "../assets/toy.webp";
 import petFood from "../assets/toy.webp";
 import petToy from "../assets/toy.webp";
 import petGrooming from "../assets/toy.webp";
@@ -135,7 +133,7 @@ export default function Products() {
   return (
     <>
       {/* products filter navigation */}
-      <div className="hidden bg-saffron lg:flex justify-center items-center px-5 py-3 gap-10">
+      {/* <div className="hidden bg-saffron lg:flex justify-center items-center px-5 py-3 gap-10">
         <div className="flex justify-center items-center gap-10">
           <Link to="/" onClick={() => setCategory("ALL")}>
             ALL
@@ -163,7 +161,7 @@ export default function Products() {
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
-      </div>
+      </div> */}
       {/* filter end */}
       <div className="wrapper">
         <div className="h-screen bg-slate-50 w-full mt-5">

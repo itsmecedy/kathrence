@@ -8,7 +8,7 @@ import { AiOutlineMenu } from "react-icons/ai";
 export default function Navigation() {
   const navItems = [
     { label: "BLOGS", path: "/blogs" },
-    { label: "ALL PRODUCTS", path: "/allProducts" },
+    { label: "PRODUCTS", path: "/Products" },
     { label: "CONTACT US", path: "/contact" },
     { label: "ABOUT US", path: "/about" },
   ];

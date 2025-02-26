@@ -22,6 +22,17 @@ export default function About() {
             treat your pets to the finest products at Kathrence Pet Supplies!
           </p>
         </div>
+          <div style={{ width: "100%", height: "450px" }}>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!4v1740584695109!6m8!1m7!1stzXaiRnACU9_0hBPxgoStQ!2m2!1d14.60269915914742!2d121.1009523229222!3f240.2649124775323!4f-9.502245866917235!5f0.7820865974627469"
+        width="100%"
+        height="100%"
+        style={{ border: 0 }}
+        allowFullScreen=""
+        loading="lazy"
+        referrerPolicy="no-referrer-when-downgrade"
+      ></iframe>
+    </div>
       </div>
     </div>
   );

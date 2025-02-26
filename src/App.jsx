@@ -3,9 +3,9 @@ import { Routes, Route } from "react-router-dom";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Home from "./pages/Home";
-import FilterComponent from "./components/FilterComponent";
 import Blogs from "./pages/Blogs";
-import AllProducts from "./pages/AllProducts";
+import Products from "./pages/Products";
+import MessengerButton from "./components/MessengerButton.jsx"; // Import the Messenger button component
 
 function App() {
   return (
@@ -14,11 +14,13 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/blogs" element={<Blogs />} />
-        <Route path="/allProducts" element={<AllProducts />} />
+        <Route path="/products" element={<Products />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/about" element={<About />} />
       </Routes>
-      {/* <FilterComponent /> */}
+
+      {/* Messenger Button at the bottom-right */}
+      <MessengerButton />
     </div>
   );
 }
