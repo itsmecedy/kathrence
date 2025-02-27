@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { FaSearch, FaShoppingCart } from "react-icons/fa";
+import { FaShoppingCart } from "react-icons/fa";
 import { IoPerson } from "react-icons/io5";
-import { AiOutlineClose } from "react-icons/ai";
-import { AiOutlineMenu } from "react-icons/ai";
+import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 
 export default function Navigation() {
   const navItems = [
@@ -14,91 +13,99 @@ export default function Navigation() {
   ];
 
   const [isOpen, setIsOpen] = useState(false);
-  const [isMobileView, setIsMobileView] = useState(false);
-
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
+  const [isMobileView, setIsMobileView] = useState(window.innerWidth <= 768);
+  const [isScrollingUp, setIsScrollingUp] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
 
   useEffect(() => {
-    const handleResize = () => {
-      setIsMobileView(window.innerWidth <= 768); // Adjust the breakpoint as needed
-    };
-    handleResize();
+    const handleResize = () => setIsMobileView(window.innerWidth <= 768);
     window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > lastScrollY && window.scrollY > 50) {
+        setIsScrollingUp(false); // Hide on scroll down
+      } else {
+        setIsScrollingUp(true); // Show on scroll up
+      }
+      setLastScrollY(window.scrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollY]);
+
   return (
-    <div className="navigation">
-      <div className="wrapper">
-        <div className=" flex justify-between items-center">
-          <div className=" text-2xl">
-            <Link to="/">KathRence</Link>
-          </div>
-          {isMobileView ? (
-            // Mobile view toggle button
-            <div className="lg:hidden text-2xl flex items-center ml-auto">
-              <button onClick={toggleMenu} type="button" className="">
-                <AiOutlineMenu />
+    <nav
+      className={`fixed top-0 left-0 w-full bg-white shadow-md transition-transform duration-300 z-50 ${
+        isScrollingUp
+          ? "translate-y-0 opacity-100"
+          : "-translate-y-full opacity-0"
+      }`}
+    >
+      <div className="wrapper flex justify-between items-center px-8 py-6">
+        <Link to="/" className="text-2xl font-bold">
+          KathRence
+        </Link>
+
+        {/* Desktop Navigation */}
+        <ul className="hidden md:flex gap-8">
+          {navItems.map((item, index) => (
+            <li key={index} className="text-xl hover:underline">
+              <Link to={item.path}>{item.label}</Link>
+            </li>
+          ))}
+        </ul>
+
+        {/* Right Icons */}
+        <div className="hidden md:flex gap-4">
+          <Link className="text-2xl flex items-center gap-1">
+            <IoPerson /> LOGIN
+          </Link>
+          <Link className="text-3xl flex items-center">
+            <FaShoppingCart />
+          </Link>
+        </div>
+
+        {/* Mobile Menu Button */}
+        {isMobileView && (
+          <button
+            onClick={() => setIsOpen(true)}
+            className="text-2xl md:hidden"
+          >
+            <AiOutlineMenu />
+          </button>
+        )}
+
+        {/* Mobile Menu Overlay */}
+        {isOpen && (
+          <div className="fixed inset-0 bg-black bg-opacity-50 z-50">
+            <div className="fixed right-0 top-0 w-3/4 h-full bg-[#8FBACC] shadow-lg flex flex-col p-6 z-50">
+              <button
+                onClick={() => setIsOpen(false)}
+                className="text-2xl self-end"
+              >
+                <AiOutlineClose />
               </button>
-            </div>
-          ) : (
-            // Desktop view navigation
-            <ul className="hidden lg:flex md:flex-row gap-6">
-              {navItems.map((item, index) => (
-                <li
-                  key={index}
-                  className="text-xl py-5 hover:underline hover:scale-105"
-                >
-                  <Link to={item.path}>{item.label}</Link>
-                </li>
-              ))}
-            </ul>
-          )}
-          {/* Right side navigation */}
-          <div className="gap-3">
-            {!isMobileView && (
-              // Desktop view login and cart
-              <div className="hidden md:flex gap-3">
-                <Link className="text-2xl flex items-center gap-1">
-                  <IoPerson /> LOGIN
-                </Link>
-                <Link className="text-2xl flex items-center">
-                  <FaShoppingCart />
-                </Link>
-              </div>
-            )}
-            {/* Mobile Navigation when menu is open */}
-            {isOpen && isMobileView && (
-              <ul className="absolute flex flex-col items-end z-100 h-full  z-10 bg-[#8FBACC] right-0 top-0">
-                <button
-                  onClick={toggleMenu}
-                  type="button"
-                  className="text-2xl pr-4 py-1"
-                >
-                  <AiOutlineClose />
-                </button>
+              <ul className="mt-4 space-y-4">
                 {navItems.map((item, index) => (
-                  <li
-                    key={index}
-                    onClick={toggleMenu}
-                    className="px-2 pt-2 pb-3 space-y-1 sm:px-3"
-                  >
+                  <li key={index}>
                     <Link
                       to={item.path}
-                      className=" py-2 text-base font-medium hover:bg"
+                      className="text-lg block"
+                      onClick={() => setIsOpen(false)}
                     >
                       {item.label}
                     </Link>
                   </li>
                 ))}
               </ul>
-            )}
+            </div>
           </div>
-        </div>
+        )}
       </div>
-    </div>
+    </nav>
   );
 }

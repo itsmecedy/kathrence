@@ -131,7 +131,7 @@ export default function Products() {
   });
 
   return (
-    <>
+    <div className=" mt-20">
       {/* products filter navigation */}
       {/* <div className="hidden bg-saffron lg:flex justify-center items-center px-5 py-3 gap-10">
         <div className="flex justify-center items-center gap-10">
@@ -164,7 +164,7 @@ export default function Products() {
       </div> */}
       {/* filter end */}
       <div className="wrapper">
-        <div className="h-screen bg-slate-50 w-full mt-5">
+        <div className="h-screen bg-slate-50 w-full pt-5 ">
           <div className="flex justify-between items-center mb-3">
             <div>
               <b>{sortedProducts.length} </b>
@@ -215,6 +215,6 @@ export default function Products() {
           {/* on mobile view make a filter in left for supplies category */}
         </div>
       </div>
-    </>
+    </div>
   );
 }
