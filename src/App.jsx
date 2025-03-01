@@ -1,7 +1,7 @@
 import { lazy, Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
-import Navigation from "./components/Navigation";
-import MessengerButton from "./components/MessengerButton";
+import Navigation from "./components/features/Navigation";
+import MessengerButton from "./components/features/MessengerButton";
 
 // Lazy loading pages
 const Home = lazy(() => import("./pages/Home"));
