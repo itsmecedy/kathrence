@@ -17,8 +17,6 @@ export default function Products() {
     }
   }, [categoryFromURL]);
 
-
-
   const filteredProducts = products.filter(
     (product) =>
       (category === "ALL" || product.category === category) &&

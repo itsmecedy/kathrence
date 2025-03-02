@@ -24,6 +24,7 @@ export default function HomeCategories() {
           <img
             src={category.image}
             alt={category.name}
+            loading="lazy"
             className="w-full h-40 object-cover rounded"
           />
           <h2 className="text-lg font-semibold">{category.name}</h2>
