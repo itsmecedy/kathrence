@@ -3,12 +3,12 @@ import { useLocation } from "react-router-dom"; // ✅ Import useLocation
 import { products } from "../data/products";
 
 export default function Products() {
-  const location = useLocation(); // ✅ Get the URL
+  const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
-  const categoryFromURL = queryParams.get("category"); // ✅ Read 'category' from URL
+  const categoryFromURL = queryParams.get("category");
 
   const [searchTerm, setSearchTerm] = useState("");
-  const [category, setCategory] = useState(categoryFromURL || "ALL"); // ✅ Use URL category
+  const [category, setCategory] = useState(categoryFromURL || "ALL");
   const [sortBy, setSortBy] = useState("name");
 
   useEffect(() => {
