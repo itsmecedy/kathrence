@@ -1,6 +1,7 @@
 import React from "react";
 import { Carousel } from "@material-tailwind/react";
 import CategoryCard from "../components/ui/CategoryCard";
+import NewArrivals from "../Home/NewArrivals";
 
 // Define an array of image paths
 const bannerImages = [
@@ -31,6 +32,7 @@ export default function Home() {
         </Carousel>
       </div>
       <CategoryCard />
+      <NewArrivals />
     </div>
   );
 }
