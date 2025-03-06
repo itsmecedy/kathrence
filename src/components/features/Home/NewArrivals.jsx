@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import asd from "../assets/home/contact-img1.jpg";
+import asd from "../../../assets/asd.png";
 
 const NewArrivals = () => {
   return (
