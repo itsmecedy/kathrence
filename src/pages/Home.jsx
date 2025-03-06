@@ -1,7 +1,7 @@
 import React from "react";
 import { Carousel } from "@material-tailwind/react";
-import CategoryCard from "../components/ui/CategoryCard";
-import NewArrivals from "../components/features/Home/NewArrivals";
+import CategoryCard from "../components/features/CategoryCard";
+import NewArrivals from "../components/features/NewArrivals";
 
 // Define an array of image paths
 const bannerImages = [
