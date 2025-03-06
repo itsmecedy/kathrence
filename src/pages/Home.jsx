@@ -31,8 +31,23 @@ export default function Home() {
           ))}
         </Carousel>
       </div>
-      <CategoryCard />
+      <div className=" border border-red-600 flex justify-center items-center text-center flex-col pt-10 w-2/3 mx-auto">
+        <p className=" text-3xl font-medium pb-5">Explore with Us</p>
+        <p>
+          At Posh Pets, we believe your furry friends deserve the best! Our
+          store is dedicated to providing premium pet products, from nutritious
+          food and tasty treats to playful toys, cozy clothes, and stylish
+          accessories. We prioritize quality, comfort, and happiness, ensuring
+          your pets stay healthy, entertained, and pampered. Explore our
+          carefully curated collections and treat your pets to the love and care
+          they truly deserve!
+        </p>
+        <button className="bg-blue-600 text-white px-4 py-2 my-5 rounded-full hover:bg-blue-700 transition">
+          Read More
+        </button>
+      </div>
       <NewArrivals />
+      <CategoryCard />
     </div>
   );
 }
