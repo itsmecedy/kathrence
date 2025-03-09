@@ -26,8 +26,6 @@ const NewArrivals = () => {
             <p className="text-gray-800">₱699.00</p>
           </div>
         </div>
-
-        {/* Add more product cards here */}
       </div>
     </section>
   );
