@@ -37,11 +37,11 @@ export default function Products() {
   const filteredProducts = products.filter(
     (product) =>
       (category === "ALL" || product.category === category) &&
-      product.name.toLowerCase().includes(searchTerm.toLowerCase())
+      product.name.toLowerCase().includes(searchTerm.toLowerCase()),
   );
 
   const sortedProducts = [...filteredProducts].sort((a, b) =>
-    sortBy === "name" ? a.name.localeCompare(b.name) : a.price - b.price
+    sortBy === "name" ? a.name.localeCompare(b.name) : a.price - b.price,
   );
 
   return (
@@ -52,7 +52,7 @@ export default function Products() {
       ) : (
         <>
           {/* ✅ Category Filter Navigation */}
-          <div className="bg-saffron flex flex-wrap justify-center items-center px-5 py-3 gap-4">
+          <div className="flex flex-wrap items-center justify-center gap-4 bg-saffron px-5 py-3">
             {[
               "ALL",
               "Pet Food",
@@ -64,7 +64,7 @@ export default function Products() {
               <button
                 key={cat}
                 onClick={() => handleCategoryChange(cat)}
-                className={`px-4 py-2 rounded transition ${
+                className={`rounded px-4 py-2 transition ${
                   category === cat
                     ? "bg-tomato text-white"
                     : "bg-gray-200 hover:bg-gray-300"
@@ -76,20 +76,20 @@ export default function Products() {
             <input
               type="text"
               placeholder="Search..."
-              className="outline-none px-3 py-2 rounded border"
+              className="rounded border px-3 py-2 outline-none"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
             />
           </div>
 
           {/* ✅ Product List */}
-          <div className="h-screen bg-slate-50 w-full pt-5">
-            <div className="flex justify-between items-center mb-3 px-5">
+          <div className="bg-slate-50 h-screen w-full pt-5">
+            <div className="mb-3 flex items-center justify-between px-5">
               <div>
                 <b>{sortedProducts.length}</b> Products
               </div>
               <select
-                className="outline-none px-2 py-1 rounded"
+                className="rounded px-2 py-1 outline-none"
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value)}
               >
@@ -99,16 +99,16 @@ export default function Products() {
             </div>
 
             {/* ✅ Products Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-4 px-5">
+            <div className="grid grid-cols-1 gap-4 px-5 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5">
               {sortedProducts.map((product) => (
                 <div
                   key={product.id}
-                  className="bg-white rounded-lg drop-shadow-md p-4 flex flex-col items-center gap-2 hover:scale-105 transition-transform"
+                  className="flex flex-col items-center gap-2 rounded-lg bg-white p-4 drop-shadow-md transition-transform hover:scale-105"
                 >
                   <img
                     src={product.image}
                     alt={product.name}
-                    className="w-full h-auto object-cover mb-4"
+                    className="mb-4 h-auto w-full object-cover"
                   />
                   <p className="text-lg font-semibold">{product.name}</p>
                   <p className="text-center text-sm">{product.description}</p>
@@ -116,7 +116,7 @@ export default function Products() {
                   <p>
                     ★★★★☆ ({product.rating}) <span>({product.reviews})</span>
                   </p>
-                  <button className="w-full bg-tomato text-powder py-1 rounded-lg hover:bg-hoverTomato">
+                  <button className="w-full rounded-lg bg-tomato py-1 text-powder hover:bg-hoverTomato">
                     Add to Cart
                   </button>
                 </div>

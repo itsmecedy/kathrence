@@ -19,18 +19,18 @@ export default function Blogs() {
 
   return (
     <div className="mt-20">
-      <div className="wrapper ">
+      <div className="wrapper">
         <div className="mx-auto py-8">
-          <h2 className="text-3xl font-bold mb-4">Latest Video Reviews</h2>
+          <h2 className="mb-4 text-3xl font-bold">Latest Video Reviews</h2>
           {videoReviews.map((review) => (
             <div key={review.id} className="mb-8">
-              <h3 className="text-xl font-bold mb-2">{review.title}</h3>
-              <p className="text-gray-600 mb-2">{review.date}</p>
+              <h3 className="mb-2 text-xl font-bold">{review.title}</h3>
+              <p className="mb-2 text-gray-600">{review.date}</p>
               <div className="relative h-0" style={{ paddingTop: "56.25%" }}>
                 <iframe
                   title={review.title}
                   src={review.videoUrl}
-                  className="absolute top-0 left-0 w-full h-full"
+                  className="absolute left-0 top-0 h-full w-full"
                   frameBorder="0"
                   allowFullScreen
                 />

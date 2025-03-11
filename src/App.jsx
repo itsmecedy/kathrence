@@ -17,9 +17,15 @@ export default function App() {
       <Navigation setSelectedCategory={setSelectedCategory} />
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>
-          <Route path="/" element={<Home setSelectedCategory={setSelectedCategory} />} />
+          <Route
+            path="/"
+            element={<Home setSelectedCategory={setSelectedCategory} />}
+          />
           <Route path="/blogs" element={<Blogs />} />
-          <Route path="/products" element={<Products selectedCategory={selectedCategory} />} />
+          <Route
+            path="/products"
+            element={<Products selectedCategory={selectedCategory} />}
+          />
           <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<About />} />
         </Routes>

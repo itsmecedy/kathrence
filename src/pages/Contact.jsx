@@ -3,9 +3,9 @@ import React from "react";
 export default function Contact() {
   return (
     <div className="mt-20 border border-red-300">
-      <div className="wrapper mx-auto lg:max-w-4xl py-8 text-center space-y-10">
-        <h2 className="text-3xl font-bold mb-4">Contact Us</h2>
-        <p className=" text-lg">
+      <div className="wrapper mx-auto space-y-10 py-8 text-center lg:max-w-4xl">
+        <h2 className="mb-4 text-3xl font-bold">Contact Us</h2>
+        <p className="text-lg">
           Have questions or need assistance? Our friendly and knowledgeable team
           is here to help! Reach out to us via cellphone at
           <strong>[insert phone number]</strong> or message us at
@@ -15,5 +15,5 @@ export default function Contact() {
         {/* Add a contact form or additional contact information here */}
       </div>
     </div>
-  );  
+  );
 }

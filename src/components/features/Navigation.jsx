@@ -39,19 +39,19 @@ export default function Navigation() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 w-full bg-white shadow-md transition-transform duration-300 z-50 ${
+      className={`fixed left-0 top-0 z-50 w-full bg-white shadow-md transition-transform duration-300 ${
         isScrollingUp
           ? "translate-y-0 opacity-100"
           : "-translate-y-full opacity-0"
       }`}
     >
-      <div className="wrapper flex justify-between items-center px-8 py-6">
+      <div className="wrapper flex items-center justify-between px-8 py-6">
         <Link to="/" className="text-2xl font-bold">
           KathRence
         </Link>
 
         {/* Desktop Navigation */}
-        <ul className="hidden md:flex gap-8">
+        <ul className="hidden gap-8 md:flex">
           {navItems.map((item, index) => (
             <li key={index} className="text-xl hover:underline">
               <Link to={item.path}>{item.label}</Link>
@@ -60,11 +60,11 @@ export default function Navigation() {
         </ul>
 
         {/* Right Icons */}
-        <div className="hidden md:flex gap-4">
-          <Link className="text-2xl flex items-center gap-1">
+        <div className="hidden gap-4 md:flex">
+          <Link className="flex items-center gap-1 text-2xl">
             <IoPerson /> LOGIN
           </Link>
-          <Link className="text-3xl flex items-center">
+          <Link className="flex items-center text-3xl">
             <FaShoppingCart />
           </Link>
         </div>
@@ -81,11 +81,11 @@ export default function Navigation() {
 
         {/* Mobile Menu Overlay */}
         {isOpen && (
-          <div className="fixed inset-0 bg-black bg-opacity-50 z-50">
-            <div className="fixed right-0 top-0 w-3/4 h-full bg-[#8FBACC] shadow-lg flex flex-col p-6 z-50">
+          <div className="fixed inset-0 z-50 bg-black bg-opacity-50">
+            <div className="fixed right-0 top-0 z-50 flex h-full w-3/4 flex-col bg-[#8FBACC] p-6 shadow-lg">
               <button
                 onClick={() => setIsOpen(false)}
-                className="text-2xl self-end"
+                className="self-end text-2xl"
               >
                 <AiOutlineClose />
               </button>
@@ -94,7 +94,7 @@ export default function Navigation() {
                   <li key={index}>
                     <Link
                       to={item.path}
-                      className="text-lg block"
+                      className="block text-lg"
                       onClick={() => setIsOpen(false)}
                     >
                       {item.label}
