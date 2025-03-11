@@ -13,7 +13,7 @@ const bannerImages = [
 export default function Home() {
   return (
     <div className="wrapper h-screen">
-      <div className="h-1/2">
+      <div className="h-1/2 mt-20">
         <Carousel
           transition={{ duration: 1, easing: "ease-in-out" }}
           autoplayDelay={3000}
@@ -31,7 +31,7 @@ export default function Home() {
           ))}
         </Carousel>
       </div>
-      <div className=" border border-red-600 flex justify-center items-center text-center flex-col pt-10 w-2/3 mx-auto">
+      <div className="flex justify-center items-center text-center flex-col pt-10 w-2/3 mx-auto">
         <p className=" text-3xl font-medium pb-5">Explore with Us</p>
         <p>
           At Posh Pets, we believe your furry friends deserve the best! Our
@@ -45,6 +45,12 @@ export default function Home() {
         <button className="bg-blue-600 text-white px-4 py-2 my-5 rounded-full hover:bg-blue-700 transition">
           Read More
         </button>
+      </div>
+      <div className=" flex justify-around">
+        <div>Dog</div>
+        <div>Cat</div>
+        <div>Fish</div>
+        <div>Bird</div>
       </div>
       <NewArrivals />
       <CategoryCard />
