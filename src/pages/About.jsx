@@ -3,15 +3,7 @@ import aboutBg from "../assets/about/about-bgImg.avif"; // Import the background
 
 export default function About() {
   return (
-    <div
-      className="flex h-screen w-full flex-col justify-center border border-red-400"
-      style={{
-        backgroundImage: `url(${aboutBg})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-      }}
-    >
+    <div className="flex h-screen w-full flex-col justify-center border border-red-400">
       <div className="wrapper mx-auto mt-20 rounded-lg border border-red-400 bg-white bg-opacity-80 p-8 text-center shadow-lg lg:max-w-4xl">
         <h2 className="mb-4 text-3xl font-bold">KathRence</h2>
         <p className="text-lg">
