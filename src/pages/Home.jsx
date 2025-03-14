@@ -20,6 +20,7 @@ export default function Home() {
           autoplayDelay={3000}
           autoplay
           loop
+          className=" z-20"
         >
           {bannerImages.map((src, index) => (
             <img
