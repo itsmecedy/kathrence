@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Contact() {
   return (
-    <div className="mt-20 border border-red-300">
+    <div className="mt-20">
       <div className="wrapper mx-auto space-y-10 py-8 text-center lg:max-w-4xl">
         <h2 className="mb-4 text-3xl font-bold">Contact Us</h2>
         <p className="text-lg">
