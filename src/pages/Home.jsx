@@ -64,7 +64,6 @@ export default function Home() {
           </div>
         ))}
       </div>
-
       <NewArrivals />
       <CategoryCard />
     </div>
