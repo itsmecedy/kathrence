@@ -22,7 +22,10 @@ export default function Cart({ closeCart }) {
     },
   ];
 
-  const total = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
+  const total = cartItems.reduce(
+    (sum, item) => sum + item.price * item.quantity,
+    0,
+  );
 
   // Handle Checkout Click
   const handleCheckout = () => {
@@ -34,8 +37,8 @@ export default function Cart({ closeCart }) {
     <>
       {/* Notification */}
       {showNotif && (
-        <div className="fixed top-5 left-1/2 z-50 -translate-x-1/2 rounded-lg bg-green-500 px-4 py-2 text-white shadow-lg transition-opacity duration-500 animate-fade">
-          ✅ Checkout successful!
+        <div className="animate-fade fixed left-1/2 top-5 z-50 -translate-x-1/2 rounded-lg bg-green-500 px-4 py-2 text-white shadow-lg transition-opacity duration-500">
+          Checkout successful!
         </div>
       )}
 
@@ -61,14 +64,23 @@ export default function Cart({ closeCart }) {
           ) : (
             <div className="space-y-4">
               {cartItems.map((item) => (
-                <div key={item.id} className="flex items-center space-x-3 border-b pb-3">
+                <div
+                  key={item.id}
+                  className="flex items-center space-x-3 border-b pb-3"
+                >
                   <div className="h-16 w-16 overflow-hidden rounded-lg bg-gray-100">
-                    <img src={item.image} alt={item.name} className="h-full w-full object-cover" />
+                    <img
+                      src={item.image}
+                      alt={item.name}
+                      className="h-full w-full object-cover"
+                    />
                   </div>
                   <div className="flex flex-grow flex-col">
                     <h3 className="font-medium text-gray-800">{item.name}</h3>
                     <p className="flex justify-between">
-                      <span className="text-gray-600">&#x20B1; {item.price}</span>
+                      <span className="text-gray-600">
+                        &#x20B1; {item.price}
+                      </span>
                       <span className="font-semibold text-gray-900">
                         &#x20B1; {item.price * item.quantity}
                       </span>
