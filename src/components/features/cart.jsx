@@ -1,10 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import { FaShoppingCart, FaTrash, FaPlus, FaMinus } from "react-icons/fa";
 import { AiOutlineClose } from "react-icons/ai";
 
 export default function Cart({ closeCart }) {
-  const [showNotif, setShowNotif] = useState(false);
-
   const cartItems = [
     {
       id: 1,
@@ -27,21 +25,18 @@ export default function Cart({ closeCart }) {
     0,
   );
 
-  // Handle Checkout Click
+  // ✅ Use SweetAlert2 for Checkout
   const handleCheckout = () => {
-    setShowNotif(true);
-    setTimeout(() => setShowNotif(false), 1000); // Hide after 1 sec
+    Swal.fire({
+      title: "Checkout Successful!",
+      text: "Your order has been placed.",
+      icon: "success",
+      confirmButtonText: "OK",
+    });
   };
 
   return (
     <>
-      {/* Notification */}
-      {showNotif && (
-        <div className="animate-fade fixed left-1/2 top-5 z-50 -translate-x-1/2 rounded-lg bg-green-500 px-4 py-2 text-white shadow-lg transition-opacity duration-500">
-          Checkout successful!
-        </div>
-      )}
-
       {/* Cart Panel */}
       <aside
         className="fixed right-0 top-0 z-50 flex h-screen w-80 flex-col bg-white shadow-xl"
