@@ -25,7 +25,7 @@ export default function Cart({ closeCart }) {
     0,
   );
 
-  // ✅ Use SweetAlert2 for Checkout
+  // Use SweetAlert2 for Checkout
   const handleCheckout = () => {
     Swal.fire({
       title: "Checkout Successful!",
