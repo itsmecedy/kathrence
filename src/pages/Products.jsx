@@ -2,8 +2,10 @@ import React, { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { products } from "../data/products";
 import Loading from "../components/ui/Loading"; // ✅ Import Loading component
+import { useCart } from "../context/CartContext"; // Import useCart hook
 
 export default function Products() {
+  const { addToCart } = useCart();
   const location = useLocation();
   const navigate = useNavigate();
   const queryParams = new URLSearchParams(location.search);
@@ -111,12 +113,11 @@ export default function Products() {
                     className="mb-4 h-auto w-full object-cover"
                   />
                   <p className="text-lg font-semibold">{product.name}</p>
-                  <p className="text-center text-sm">{product.description}</p>
                   <p className="text-gray-600">&#x20B1; {product.price}</p>
-                  <p>
-                    ★★★★☆ ({product.rating}) <span>({product.reviews})</span>
-                  </p>
-                  <button className="w-full rounded-lg bg-tomato py-1 text-powder hover:bg-hoverTomato">
+                  <button
+                    className="w-full rounded-lg bg-tomato py-1 text-white hover:bg-hoverTomato"
+                    onClick={() => addToCart(product)} // Add product to cart
+                  >
                     Add to Cart
                   </button>
                 </div>

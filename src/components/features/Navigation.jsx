@@ -3,9 +3,11 @@ import { Link } from "react-router-dom";
 import { FaShoppingCart } from "react-icons/fa";
 import { IoPerson } from "react-icons/io5";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
+import { useCart } from "../../context/CartContext"; // Import useCart
 import Cart from "./Cart";
 
 export default function Navigation() {
+  const { cart } = useCart(); // Get cart items count
   const navItems = [
     { label: "BLOGS", path: "/blogs" },
     { label: "PRODUCTS", path: "/products" },
@@ -40,9 +42,7 @@ export default function Navigation() {
       {/* Fixed Navigation Bar */}
       <nav
         className={`fixed left-0 top-0 z-40 w-full bg-white shadow-md transition-transform duration-300 ${
-          isScrollingUp
-            ? "translate-y-0 opacity-100"
-            : "-translate-y-full opacity-0"
+          isScrollingUp ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"
         }`}
       >
         <div className="wrapper flex items-center justify-between px-8 py-6">
@@ -69,6 +69,11 @@ export default function Navigation() {
               onClick={() => setIsCartOpen(true)}
             >
               <FaShoppingCart />
+              {cart.length > 0 && (
+                <span className="absolute -right-2 -top-2 flex h-5 w-5 items-center justify-center rounded-full bg-red-600 text-sm text-white">
+                  {cart.length}
+                </span>
+              )}
             </button>
           </div>
 
