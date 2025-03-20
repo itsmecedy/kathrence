@@ -42,7 +42,9 @@ export default function Navigation() {
       {/* Fixed Navigation Bar */}
       <nav
         className={`fixed left-0 top-0 z-40 w-full bg-white shadow-md transition-transform duration-300 ${
-          isScrollingUp ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"
+          isScrollingUp
+            ? "translate-y-0 opacity-100"
+            : "-translate-y-full opacity-0"
         }`}
       >
         <div className="wrapper flex items-center justify-between px-8 py-6">
