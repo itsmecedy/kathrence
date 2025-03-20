@@ -7,7 +7,8 @@ export default function Cart({ closeCart }) {
   const { cart, removeFromCart, updateQuantity } = useCart();
 
   const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
-  // ✅ Use SweetAlert2 for Checkout
+
+  // Use SweetAlert2 for Checkout
   const handleCheckout = () => {
     Swal.fire({
       title: "Checkout Successful!",
