@@ -2,7 +2,6 @@ import React from "react";
 import { useCart } from "../../context/CartContext";
 import { FaShoppingCart, FaTrash, FaPlus, FaMinus } from "react-icons/fa";
 import { AiOutlineClose } from "react-icons/ai";
-import Swal from "sweetalert2";
 
 export default function Cart({ closeCart }) {
   const { cart, removeFromCart, updateQuantity } = useCart();
