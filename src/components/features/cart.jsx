@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from "react";
 import { useCart } from "../../context/CartContext";
 import { FaShoppingCart, FaTrash, FaPlus, FaMinus } from "react-icons/fa";
 import { AiOutlineClose } from "react-icons/ai";
+import Swal from "sweetalert2";
 
 export default function Cart({ closeCart }) {
   const { cart, removeFromCart, updateQuantity } = useCart();
@@ -31,8 +32,8 @@ export default function Cart({ closeCart }) {
       icon: "success",
       confirmButtonText: "OK",
     }).then(() => {
-      cart.forEach((item) => removeFromCart(item.id)); // Remove all items from cart
-      closeCart(); // Close the cart after checkout
+      cart.forEach((item) => removeFromCart(item.id));
+      closeCart();
     });
   };
 
