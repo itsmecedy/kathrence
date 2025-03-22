@@ -4,7 +4,7 @@ import { FaShoppingCart } from "react-icons/fa";
 import { IoPerson } from "react-icons/io5";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import { useCart } from "../../context/CartContext"; // Import useCart
-import Cart from "../features/Cart";
+import Cart from "./Cart";
 
 export default function Navigation() {
   const { cart } = useCart(); // Get cart items count
