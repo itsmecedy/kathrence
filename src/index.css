@@ -13,6 +13,9 @@
   --saffron: #e9c46aff;
   --sandy-brown: #f4a261ff;
 }
+html {
+  overflow-y: scroll; /* Ensures space for scrollbar to prevent layout shift */
+}
 body {
   background: #fbfefb;
   font-family: Poppins;
