@@ -46,7 +46,6 @@ export default function Cart({ closeCart }) {
             <AiOutlineClose />
           </button>
         </div>
-
         <div className="flex-grow overflow-y-auto p-4">
           {cart.length === 0 ? (
             <div className="flex flex-col items-center text-gray-500">
