@@ -113,7 +113,8 @@ export default function Products() {
                     className="mb-4 h-auto w-full object-cover"
                   />
                   <p className="text-lg font-semibold">{product.name}</p>
-                  <p className="text-gray-600">&#x20B1; {product.price}</p>
+                  <p className="text-md text-gray-600">{product.description}</p>
+                  <p className="text-gray-800">&#x20B1; {product.price}</p>
                   <button
                     className="w-full rounded-lg bg-tomato py-1 text-white hover:bg-hoverTomato"
                     onClick={() => addToCart(product)} // Add product to cart
