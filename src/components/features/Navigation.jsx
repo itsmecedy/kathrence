@@ -94,7 +94,7 @@ export default function Navigation() {
       {/* Mobile Menu Overlay */}
       {isOpen && (
         <div className="fixed inset-0 z-50 bg-black bg-opacity-50">
-          <div className="fixed right-0 top-0 z-50 flex h-full w-3/4 flex-col bg-[#8FBACC] p-6 shadow-lg">
+          <div className="fixed right-0 top-0 z-50 flex h-full w-3/4 flex-col bg-[#fbfefb] p-6 shadow-lg">
             <button
               onClick={() => setIsOpen(false)}
               className="self-end text-2xl"
