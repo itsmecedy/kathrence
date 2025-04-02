@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import Navigation from "./components/features/Navigation";
 import MessengerButton from "./components/features/MessengerButton";
 import { CartProvider } from "../src/context/CartContext";
+import Footer from "./components/features/Footer";
 
 const Home = lazy(() => import("./pages/Home"));
 const About = lazy(() => import("./pages/About"));
@@ -33,6 +34,7 @@ export default function App() {
             <Route path="/about" element={<About />} />
           </Routes>
         </Suspense>
+        <Footer />
         <MessengerButton />
       </CartProvider>
     </>

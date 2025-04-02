@@ -21,7 +21,7 @@ body {
   font-family: Poppins;
   color: #222222; /* dark gray */
   /* #F5F5F5 (Light Gray) */
-  overflow-y: scroll; /* Always show vertical scrollbar */
+  /* overflow-y: scroll; Always show vertical scrollbar */
 }
 .wrapper {
   max-width: 1440px;
