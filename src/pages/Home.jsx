@@ -36,7 +36,7 @@ export default function Home() {
       <div className="mx-auto flex w-2/3 flex-col items-center justify-center pt-10 text-center">
         <p className="pb-5 text-3xl font-medium">Explore with Us</p>
         <p>
-          At Posh Pets, we believe your furry friends deserve the best! Our
+          At  KathRence, we believe your furry friends deserve the best! Our
           store is dedicated to providing premium pet products, from nutritious
           food and tasty treats to playful toys, cozy clothes, and stylish
           accessories. We prioritize quality, comfort, and happiness, ensuring
