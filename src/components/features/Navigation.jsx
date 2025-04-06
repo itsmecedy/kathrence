@@ -39,7 +39,6 @@ export default function Navigation() {
 
   return (
     <>
-      {/* Fixed Navigation Bar */}
       <nav
         className={`fixed left-0 top-0 z-40 w-full bg-white shadow-md transition-transform duration-300 ${
           isScrollingUp
